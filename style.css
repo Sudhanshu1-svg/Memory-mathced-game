@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&family=Roboto+Slab:wght@300;400;900&display=swap');
+
+*{
+    font-style: italic; /*change the font later*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* change the background later */
+    background-image: radial-gradient(rgb(247, 240, 240), rgb(45, 115, 245));
+    min-height: 100vh;
+    
+}
+
+
+html{
+    /* cursor: url('./images/hand.png'), auto; */
+    min-height: 100vh;
+}
+
+
+.page-title
+{
+    color:greenyellow;
+    font-family: sans-serif;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.game-info-container
+{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-info
+{   
+    
+    color:rgb(204, 37, 121);
+    font-size: 4em;
+}
+
+.game-container
+{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap:10px;
+    margin:50px;
+    justify-content: center;
+    perspective: 700px;
+
+}
+
+.card
+{   
+    position: relative;
+    /* border: 2px solid rebeccapurple; */
+    /* background-color: black; */
+    height: 175px;
+    width: 125px;
+
+}
+
+.card:hover
+{
+    /* cursor: url('/images/grab.png'),auto; */
+}
+
+
+.card.visible .card-back{
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front{
+    transform: rotateY(0);
+}
+
+
+.card.matched .card-value
+{
+    animation: dance 1s linear infinite 500ms;
+
+}
+
+
+.overlay-text
+{   
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: rgb(199, 226, 43);
+    font-family:'Oswald' ;
+
+}
+
+
+
+.overlay-text-small
+{
+    font-size: .3em;
+}
+
+.overlay-text.visible
+{
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow
+{
+    from
+    {
+        background-color: rgba(0, 0, 0, 0) ;
+        font-size: 0;
+    }
+    to
+    {   
+        font-size: 10em;
+        background-color: rgb(0, 0, 0, .90);
+    }
+}
+
+
+@keyframes dance
+{
+    0% , 100%
+    {
+        transform: rotate(0);
+    }
+    25%
+    {
+        transform: rotate(-3.1deg);
+    }
+    75%
+    {
+        transform: rotate(3.1deg);
+    }
+}
+
+
+
+
+.card-back
+{
+    background-color: rgb(165, 11, 11);
+    border-color: rgb(0, 4, 10);
+}
+
+.card-face
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    /*Apply the Glowing background after you done doing the baisc*/
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: outset;
+    backface-visibility: hidden;
+    transition: transform 500ms ease-in-out;
+    
+
+}
+
+
+
+.card-front
+{   
+    background-color: rgba(159, 212, 233, 0.452);
+    transform: rotateY(180deg);
+}
+
+
+
+.card-front:hover .card-value
+{
+   transform: scale(1.2); 
+}
+
+.leaf-img
+{
+    position: absolute;
+    width: 35px;
+    height: 76px;
+}
+
+.leaf-top-left
+{
+    transform: rotate(228deg);
+    top: -22px;
+    left: 8px;
+}
+
+.leaf-top-right
+{   
+    transform: rotate(129deg);
+    top: -21px;
+    right: 3px;
+}
+
+.leaf-bottom-left
+{   
+    transform: rotate(144deg);
+    
+    bottom: -14px;
+    left: 0px;
+
+}
+
+.leaf-bottom-right
+{
+    transform: rotate(226deg);
+
+    bottom: -20px;
+    right: -10px;
+}
+
+.background-pic
+{
+    align-self: flex-start;
+    /* position:absolute; */
+    /* opacity: 0.588; */
+    width: 125px;
+    height: 175px;
+    transition: transform 100ms ease-in-out;
+}
+
+.card-back:hover .background-pic
+{
+    transform: scale(1.5) ;
+}
+
+
+.card-value
+{   
+    position: absolute;
+    height:175px;
+    width: 126px;
+    transform: scale(.9);
+    transition: transform 300ms ease-in-out;
+    border-radius: 12px;
+    
+}
+
+@media (max-width: 600px)
+{
+    .game-container
+    {
+        grid-template-columns: repeat(3,auto);
+
+    }
+
+    .game-info-container
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+}

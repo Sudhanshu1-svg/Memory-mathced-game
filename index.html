@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathcing Game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1 class="page-title">Memory Game</h1>
+    <div class="overlay-text  visible" >
+        Click to Start
+    </div>
+    <div id="game-over-text" class="overlay-text" >
+        GAME OVER
+        <span class="overlay-text-small" >Click to Restart</span>
+    </div>
+    <div id="victory-text " class="overlay-text" >
+        VICTORY
+        <span class="overlay-text-small" >Click to Restart</span>
+    </div>
+    <div class="game-container">
+        <div class="game-info-container">
+            <div class="game-info">
+                Time <span id="time-remaining">100</span>
+            </div>
+            <div class="game-info">
+                Flips <span id="flips">0</span>
+            </div>
+        </div>
+    
+        <div class="card ">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Monkey_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Monkey_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Tiger_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Tiger_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/raineDeer_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/raineDeer_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Puma_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Puma_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Panda_ctuie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Panda_ctuie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Night_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Night_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Cheetha_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Cheetha_cutie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Lemur_ctuie.PNG">
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-back card-face">
+                <img class="leaf-img leaf-top-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-top-right" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-left" src="./images/leafs.png">
+                <img class="leaf-img leaf-bottom-right" src="./images/leafs.png">
+
+                <img class="background-pic" src="./images/backgroung-2.jpg">
+
+            </div>
+            <div class="card-front card-face">
+                <img class="card-value" src="images/Lemur_ctuie.PNG">
+            </div>
+        </div>
+        <script src="./script.js" async></script>
+</body>
+
+</html>
